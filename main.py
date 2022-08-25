@@ -8,7 +8,7 @@ app = Sanic('Simple_Scraper')
 async def index(request):
     return json({"success": True})
 
-@app.post('/extract')
+@app.get('/extract')
 async def extract(request):
     try:
         # Getting URL to scrape
