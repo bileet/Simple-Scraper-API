@@ -8,14 +8,14 @@ app = Sanic('Simple_Scraper')
 async def index(request):
     return json({"success": True})
 
-@app.get('/extract')
-async def extract(request):
+@app.get('/scrape')
+async def scrape(request):
     try:
         # Getting URL to scrape
         url = request.args.get('url')
 
         # Make GET request to the given URL
-        req = httpx.get(url)
+        req = httpx.get(url, follow_redirects=True)
 
         # Init BeautifulSoup parser
         soup = BeautifulSoup(req.text, 'html.parser')
