@@ -1,5 +1,5 @@
 import httpx, os
-from sanic import Sanic, text, json
+from sanic import Sanic, json
 from bs4 import BeautifulSoup
 
 app = Sanic('Simple_Scraper')
